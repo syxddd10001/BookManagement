@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1685075206 source:d:\programming2023\cpp\bookshopmanagement\bookshopmanagement\main.cpp
+	<iostream>
+	<string>
+	"book.h"
+
+1685075007 d:\programming2023\cpp\bookshopmanagement\bookshopmanagement\include\book.h
+	<string>
+
+1685074859 source:d:\programming2023\cpp\bookshopmanagement\bookshopmanagement\src\book.cpp
+	"book.h"
+	<iostream>
+	<string>
+
