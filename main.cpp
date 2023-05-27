@@ -32,11 +32,12 @@ Library createLibrary ( )
 int main()
 {
     // user has an array of libraries, which have an array of books, which have an array of chapters
-    string input;
 
-    vector <User> userList;
+    string input; // menu input
 
-    while (true)
+    vector <User> userList; // user list
+
+    while (true) // main menu
     {
         cout << "Type 1 to create a new profile" << endl;
         cout << "Type 2 to add library to profile" << endl;
@@ -65,13 +66,13 @@ int main()
                 cout << "Enter user ID, ID starts from 0: " << endl;
                 cin >> input;
                 int ID = stoi(input);
-                if (ID >= userList.size())
+                if ( ID >= userList.size() )
                 {
                     break;
                 }
                 auto it = userList.begin() + ID;
 
-                it->add_library(createLibrary());
+                it->add_library( createLibrary() );
             }
         }
 
@@ -82,7 +83,7 @@ int main()
                 cout << "Enter user ID, ID starts from 0: " << endl;
                 cin >> input;
                 int ID = stoi(input);
-                if (ID >= userList.size())
+                if ( ID >= userList.size() )
                 {
                     continue;
                 }
@@ -105,11 +106,11 @@ int main()
     }
 
 
-    vector <Book> booklist;
+    /*vector <Book> booklist;
     booklist.push_back(Book("Harry Potter","JK Rowling",2001));
     booklist.push_back(Book("The Great Gatsby","F. Scott Fitzgerlad",1999));
     Library L1("library 1", booklist);
-
+    */
 
 
 

@@ -29,7 +29,7 @@ void User::print_libList()
     int count = 1;
     for (Library lib : lib_list)
     {
-        cout << count << " " << lib.get_libName() << endl;
+        cout << count << ". " << lib.get_libName() << endl;
         count++;
     }
 }
