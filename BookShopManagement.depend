@@ -41,3 +41,45 @@
 	"book.h"
 	"library.h"
 
+1685213888 source:c:\users\borno\onedrive\desktop\c++\bookmanagement\src\book.cpp
+	"book.h"
+	<iostream>
+	<string>
+
+1685213888 c:\users\borno\onedrive\desktop\c++\bookmanagement\include\book.h
+	<string>
+	<vector>
+
+1685213888 source:c:\users\borno\onedrive\desktop\c++\bookmanagement\src\library.cpp
+	"library.h"
+	<iostream>
+	<string>
+	<vector>
+
+1685213888 c:\users\borno\onedrive\desktop\c++\bookmanagement\include\library.h
+	<iostream>
+	<string>
+	<vector>
+	"book.h"
+
+1685213888 source:c:\users\borno\onedrive\desktop\c++\bookmanagement\src\user.cpp
+	"user.h"
+	<iostream>
+	<string>
+	<vector>
+	"book.h"
+
+1685213888 c:\users\borno\onedrive\desktop\c++\bookmanagement\include\user.h
+	<iostream>
+	<string>
+	<vector>
+	"book.h"
+	"library.h"
+
+1685215209 source:c:\users\borno\onedrive\desktop\c++\bookmanagement\main.cpp
+	<iostream>
+	<string>
+	"book.h"
+	"library.h"
+	"user.h"
+

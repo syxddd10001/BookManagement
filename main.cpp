@@ -6,7 +6,7 @@
 using namespace std;
 
 
-
+vector <User> userList; // user list
 User create_profile ( int UID )
 {
     string Uname;
@@ -29,13 +29,33 @@ Library createLibrary ( )
 }
 
 
+User addLibrary(int mode)
+{
+    string input1;
+    cout << "Enter user ID, ID starts from 0: " << endl;
+    cin >> input1;
+    int ID = stoi(input1);
+    if ( ID >= userList.size() )
+    {
+        cout << "Request unsuccessful" << endl;
+
+    }
+    auto it = userList.begin() + ID;
+
+    if (mode == 1) it->add_library( createLibrary() );
+
+    return *it;
+
+}
+
+
 int main()
 {
     // user has an array of libraries, which have an array of books, which have an array of chapters
 
     string input; // menu input
 
-    vector <User> userList; // user list
+
 
     while (true) // main menu
     {
@@ -63,33 +83,18 @@ int main()
         {
             if ( userList.size() != 0)
             {
-                cout << "Enter user ID, ID starts from 0: " << endl;
-                cin >> input;
-                int ID = stoi(input);
-                if ( ID >= userList.size() )
-                {
-                    break;
-                }
-                auto it = userList.begin() + ID;
-
-                it->add_library( createLibrary() );
+                User it = addLibrary(1);
+                cout << "Added Library Successfully" << endl;
             }
         }
 
         else if ( input == "libraries" ) //list all libraries of the specific user
         {
-            if ( userList.size() != 0)
+            if ( userList.size() != 0 )
             {
-                cout << "Enter user ID, ID starts from 0: " << endl;
-                cin >> input;
-                int ID = stoi(input);
-                if ( ID >= userList.size() )
-                {
-                    continue;
-                }
-                auto it = userList.begin() + ID;
-
-                it->print_libList();
+                User it = addLibrary(0);
+                it.print_userInfo();
+                it.print_libList();
             }
         }
 
