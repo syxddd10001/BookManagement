@@ -24,6 +24,8 @@ class Library
 
         //functions
         void printList();
+        vector <Book> get_bookList();
+
         void addBook(Book b);
         void removeBook(string bookTitle);
 

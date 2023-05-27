@@ -1,6 +1,7 @@
 #ifndef BOOK_H
 #define BOOK_H
 #include <string>
+#include <vector>
 using namespace std;
 
 class Book
@@ -9,7 +10,7 @@ class Book
         string title;
         string author;
         short year;
-
+        vector <string> chapters;
 
     public:
         // getters
