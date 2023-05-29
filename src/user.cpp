@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include "book.h"
+#include "library.h"
 
 string User::get_Uname()
 {

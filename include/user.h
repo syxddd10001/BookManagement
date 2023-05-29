@@ -5,7 +5,6 @@
 #include <vector>
 #include "book.h"
 #include "library.h"
-
 class User
 {
     protected:

@@ -48,14 +48,42 @@ User addLibrary(int mode)
 
 }
 
+Library addBookToLib(int mode)
+{
+    string input2;
+
+    User user1 = addLibrary(0);
+    user1.print_userInfo();
+    user1.print_libList();
+    vector <Library> userLib = user1.get_list();
+
+    cout << "Select Library number: " << endl;
+    cin >> input2;
+    int ID = stoi(input2)-1;
+    if (ID >= userLib.size())
+    {
+        cout << "Request Unsuccessful" << endl;
+    }
+
+    auto it = userLib.begin() + ID;
+
+    if (mode == 1)
+    {
+        Book b("Book1", "Author", 2023);
+        it->addBook(b);
+        cout << "Book added successfully" << endl;
+    }
+    return *it;
+
+}
+
+
 
 int main()
 {
     // user has an array of libraries, which have an array of books, which have an array of chapters
 
     string input; // menu input
-
-
 
     while (true) // main menu
     {
@@ -100,8 +128,21 @@ int main()
 
         else if ( input == "3" )
         {
+            if ( userList.size() != 0){
 
+
+
+            }
         }
+
+        else if ( input == "books" )
+        {
+            if ( userList.size() != 0)
+            {
+
+            }
+        }
+
         else
         {
             exit(0);
