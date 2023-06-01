@@ -9,6 +9,8 @@ using namespace std;
 void Library::printList()
 {
     int count = 1;
+
+    cout << "Book List: " << endl;
     for (Book b : book_list)
     {
         cout << count << ". Title: " << b.get_name() << ", Author: " << b.get_author() << ", Year: " << b.get_year() << endl;

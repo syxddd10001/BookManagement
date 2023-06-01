@@ -11,13 +11,13 @@ class User
         string name;
         int ID;
         vector <Library> lib_list;
-
+        string password;
 
     public:
 
         string get_Uname();
         int get_ID();
-        vector <Library> get_list();
+        vector<Library>& get_list();
         void print_libList();
 
         void print_userInfo();
@@ -26,7 +26,7 @@ class User
         void remove_library();
 
 
-        User(string name, int ID, vector <Library> libList);
+        User(string name, int ID, vector <Library> libList, string password);
         ~User();
 
 

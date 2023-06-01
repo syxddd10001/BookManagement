@@ -15,7 +15,7 @@ int User::get_ID()
     return ID;
 }
 
-vector <Library> User::get_list()
+vector<Library>& User::get_list()
 {
     return lib_list;
 }
@@ -41,10 +41,11 @@ void User::add_library(Library L)
 }
 
 
-User::User(string name, int ID, vector <Library> libList)
+User::User(string name, int ID, vector <Library> libList, string password)
 {
     this->name = name;
     this->ID = ID;
+    this->password = password;
 }
 
 

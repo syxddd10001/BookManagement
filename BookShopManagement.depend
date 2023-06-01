@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1685240058 source:d:\programming2023\cpp\bookshopmanagement\bookshopmanagement\main.cpp
+1685657211 source:d:\programming2023\cpp\bookshopmanagement\bookshopmanagement\main.cpp
 	<iostream>
 	<string>
 	"book.h"
@@ -10,31 +10,32 @@
 	<string>
 	<vector>
 
-1685074859 source:d:\programming2023\cpp\bookshopmanagement\bookshopmanagement\src\book.cpp
+1685551801 source:d:\programming2023\cpp\bookshopmanagement\bookshopmanagement\src\book.cpp
 	"book.h"
 	<iostream>
 	<string>
 
-1685238108 source:d:\programming2023\cpp\bookshopmanagement\bookshopmanagement\src\library.cpp
+1685583571 source:d:\programming2023\cpp\bookshopmanagement\bookshopmanagement\src\library.cpp
 	"library.h"
 	<iostream>
 	<string>
 	<vector>
 
-1685129672 d:\programming2023\cpp\bookshopmanagement\bookshopmanagement\include\library.h
+1685551801 d:\programming2023\cpp\bookshopmanagement\bookshopmanagement\include\library.h
 	<iostream>
 	<string>
 	<vector>
 	"book.h"
 
-1685204846 source:d:\programming2023\cpp\bookshopmanagement\bookshopmanagement\src\user.cpp
+1685660219 source:d:\programming2023\cpp\bookshopmanagement\bookshopmanagement\src\user.cpp
 	"user.h"
 	<iostream>
 	<string>
 	<vector>
 	"book.h"
+	"library.h"
 
-1685240696 d:\programming2023\cpp\bookshopmanagement\bookshopmanagement\include\user.h
+1685660199 d:\programming2023\cpp\bookshopmanagement\bookshopmanagement\include\user.h
 	<iostream>
 	<string>
 	<vector>
