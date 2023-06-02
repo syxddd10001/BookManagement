@@ -25,6 +25,7 @@ class User
         void add_library(Library L);
         void remove_library();
 
+        string getPassword();
 
         User(string name, int ID, vector <Library> libList, string password);
         ~User();

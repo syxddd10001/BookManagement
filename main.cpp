@@ -8,6 +8,10 @@ using namespace std;
 
 vector <User> userList; // global user list
 
+
+
+bool logged = false;
+
 void create_profile ( int UID )
 {
     string Uname; // name
@@ -98,12 +102,64 @@ void addBookToLib( bool create )
 
 }
 
+void login()
+{
+    if (userList.size() == 0)
+    {
+        cout << "No user exists, create a profile"<< endl;
+        return;
+    }
+
+    string input;
+    cout << "enter your UID: " << endl;
+    cin >> input;
+    try
+    {
+        int UID = stoi(input);
+        cout << "enter your password: " << endl;
+        cin >> input;
+
+        for (User userN: userList)
+        {
+            if (userN.get_ID() == UID){
+                if (input == userN.getPassword()){
+                    cout << "SUCCESSFULLY LOGGED IN" << endl;
+                    logged = true;
+                    return;
+                }
+
+                else
+                {
+                    cout << "Wrong password, try again" << endl;
+                    login();
+                }
+            }
+
+            else
+            {
+
+                cout << "User with that ID not found" << endl;
+                login();
+                return;
+
+            }
+        }
+
+    } catch (...) { cout << "Error occurred, try again." << endl; }
+
+    return;
+
+
+    //it doesnt matter.
+}
+
+
 int main()
 {
     // user has an array of libraries, which have an array of books, which have an array of chapters
 
 
-    cout << "books: " << endl;
+    cout << "Books Management System " << endl;
 
 
 
@@ -114,69 +170,77 @@ int main()
     {
         try
         {
-            cout << "Type 1 to create a new profile" << endl;
-            cout << "Type 2 to add library to profile" << endl;
-            cout << "Type 3 to add book to library" << endl;
-            cin >> input;
-
-            if ( input == "1" ) // create new user profile
+            if (!logged)
             {
-                create_profile(userList.size());
-            } else if ( input == "2" ) // create new library and add to the specific user
-            {
-                if ( userList.size() != 0)
+                cout << "Type 1 to login" << endl;
+                cout << "Type 2 to create a new profile" << endl;
+                cin >> input;
+                if ( input == "1")
                 {
-                    addLibrary( true );
-                    cout << "Added Library Successfully" << endl;
+                    login();
                 }
-            } else if ( input == "3" )
-            {
-                if ( userList.size() != 0){
 
-                    addBookToLib( true );
+                else if ( input == "2" ) // create new user profile
+                {
+                    create_profile(userList.size());
                 }
+
             }
 
-            else if ( input == "users" ) // list all user info
+            else
             {
-                for (User user : userList)
+                cout << "Type 1 to add library to profile" << endl;
+                cout << "Type 2 to add book to library" << endl;
+                cout << "Type libraries to print the library list"<< endl;
+                cout << "Type books to print the book list in the selected library" << endl;
+                cin >> input;
+
+
+                if ( input == "1" && logged) // create new library and add to the specific user
                 {
-                    user.print_userInfo();
+                    if ( userList.size() != 0)
+                    {
+                        addLibrary( true );
+                        cout << "Added Library Successfully" << endl;
+                    }
                 }
-            } else if ( input == "libraries" ) //list all libraries of the specific user
-            {
-                if ( userList.size() != 0 )
+
+                else if ( input == "2" && logged)
                 {
-                    addLibrary( false );
+                    if ( userList.size() != 0)
+                    {
+                        addBookToLib( true );
+                    }
                 }
-            } else if ( input == "books" )
-            {
-                if ( userList.size() != 0)
+
+                else if ( input == "libraries" ) //list all libraries of the specific user
                 {
-                    addBookToLib( false );
+                    if ( userList.size() != 0 )
+                    {
+                        addLibrary( false );
+                    }
                 }
+                else if ( input == "books" )
+                {
+                    if ( userList.size() != 0)
+                    {
+                        addBookToLib( false );
+                    }
+                }
+
+
+                else if (input == "exit")
+                {
+                    exit(0);
+                }
+
+
+                else continue;
             }
+        cout << endl;
 
-
-            else if (input == "exit")
-            {
-                exit(0);
-            }
-
-
-            else continue;
-
-            cout << endl;
-
-        } catch (...){}
-    }
-
-
-
-
-
-
-
+    } catch (...){}
+}
 
 
     return 0;

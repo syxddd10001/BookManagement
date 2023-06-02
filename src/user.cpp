@@ -40,6 +40,10 @@ void User::add_library(Library L)
     lib_list.push_back(L);
 }
 
+string User::getPassword()
+{
+    return password;
+}
 
 User::User(string name, int ID, vector <Library> libList, string password)
 {
